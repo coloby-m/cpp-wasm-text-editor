@@ -2647,7 +2647,7 @@ function assignWasmImports() {
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors', 0);
 var _especific_t = Module['_especific_t'] = createExportWrapper('especific_t', 3);
-var _random_txt = Module['_random_txt'] = createExportWrapper('random_txt', 1);
+var _random_txt = Module['_random_txt'] = createExportWrapper('random_txt', 0);
 var _clear_vetor = Module['_clear_vetor'] = createExportWrapper('clear_vetor', 0);
 var _search = Module['_search'] = createExportWrapper('search', 5);
 var _Register = Module['_Register'] = createExportWrapper('Register', 4);

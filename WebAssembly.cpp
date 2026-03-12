@@ -106,9 +106,7 @@ extern "C" { // SEARCH BLOCK
    };
 
  EMSCRIPTEN_KEEPALIVE
-  void random_txt(void(*js_callback_null)(const int)){
-
-      L[0].js_callback_noT = js_callback_null;
+  void random_txt(){
       
       mcs::V<int> vv;
 

@@ -28,7 +28,7 @@ Module.onRuntimeInitialized = () => {
 
   const random = document.getElementById("random")
 
-     random.onclick = function(){ Module.ccall("random_txt",null,["number"],[callbackForCpp_null] )}
+     random.onclick = function(){ Module.ccall("random_txt",null)}
 
 
   const radios = document.querySelectorAll('input[name="category"]');
@@ -62,6 +62,8 @@ Module.onRuntimeInitialized = () => {
      Module.HEAPU8[Title + title_tt.length] = 0
  
      Module.ccall("search",null,["number","number","number","number","number"],[whatDo,Title,callbackForCpp,callbackForCpp_null,otherCallback])
+
+     document.getElementById("random").style.display = "flex"  
      
    }
 
