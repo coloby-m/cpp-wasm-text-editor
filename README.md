@@ -74,10 +74,53 @@ Também faz parte da minha preparação para projetos mais avançados envolvendo
 ## Como executar
 
 1. Baixe os repositorios
-2. instale o pytho no terminal windows usando o comando winget install -e --id Python.Python.3.12, E no lunux  suto apt install python 3.12
-3. http://localhost:9090/WebAssemnly.html
+2. Extraia os arquivos
+3. instale o pytho no terminal windows usando o comando winget install -e --id Python.Python.3.12, E no lunux  suto apt install python 3.12
+4. Abra o terminal windows/linux/cmd etc
+5. Digite cd Downloads\cpp-wasm-text-editor-main
+6. Digite python server.py
+7. No navegador digite http://localhost:9090/WebAssemnly.html
 
 ---
+
+## Como executar
+
+1. Baixe os repositorios
+2. Extraia os arquivos
+3. instale o pytho no terminal windows usando o comando winget install -e --id Python.Python.3.12, E no lunux  suto apt install python 3.12
+
+    Windows:
+    
+    Abra o terminal e execute:
+    
+    winget install -e --id Python.Python.3.12
+    
+    Linux (Ubuntu / Debian):
+    
+    sudo apt install python3.12
+
+4. Abra o terminal.
+
+5. Entre na pasta do projeto:
+
+    Windows:
+    
+    cd Downloads\cpp-wasm-text-editor-main
+    
+    Linux:
+    
+    cd Downloads/cpp-wasm-text-editor-main
+
+6. Inicie o servidor local:
+
+python server.py
+
+7. Abra o navegador e acesse:
+
+    http://localhost:9090/WebAssembly.html
+   
+Observação:
+O projeto precisa ser executado através de um servidor local, pois navegadores bloqueiam o carregamento de arquivos WebAssembly quando o arquivo HTML é aberto diretamente.
 
 ## Autor
 
