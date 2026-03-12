@@ -73,8 +73,9 @@ Também faz parte da minha preparação para projetos mais avançados envolvendo
 
 ## Como executar
 
-1. Compilar o código C++ para WebAssembly
-2. Abrir `index.html` no navegador
+1. Baixe os repositorios
+2. instale o pytho no terminal windows usando o comando winget install -e --id Python.Python.3.12, E no lunux  suto apt install python 3.12
+3. http://localhost:9090/WebAssemnly.html
 
 ---
 
