@@ -6,6 +6,18 @@ Editor de texto experimental desenvolvido em C++ com execução no navegador uti
 
 Explorar integração entre aplicações C++ e interfaces web modernas, mantendo lógica de processamento em código nativo e interface no navegador.
 
+## Funcionalidades
+
+- Registro de textos
+- Busca por texto
+- Busca por título
+- Sistema de favoritos
+- Estrutura FIFO e LIFO
+- Execução paralela com threads
+- Sincronização com mutex
+- Ordenação por FIFO / LIFO
+- Multithreading com pthread (no WASM)
+
 ## Tecnologias
 
 - C++
