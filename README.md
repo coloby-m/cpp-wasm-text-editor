@@ -87,7 +87,7 @@ Também faz parte da minha preparação para projetos mais avançados envolvendo
 
 1. Baixe os repositorios
 2. Extraia os arquivos
-3. instale o pytho no terminal windows usando o comando winget install -e --id Python.Python.3.12, E no lunux  suto apt install python 3.12
+3. Instale o Python 3.12.
 
     Windows:
     
