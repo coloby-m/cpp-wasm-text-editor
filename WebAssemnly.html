@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Moisés Santos</title>
+
+        <script src="emscripten.js"></script>
+        <script src="WebAssembly.js"></script>
+        
+<style>
+
+.al{
+  max-width: 600px;
+  width: 90%;
+  cursor: pointer;
+  text-align: center;
+  color: black;
+  padding: 20px;
+  ont-size: 12px;
+  border-radius: 30px;
+   box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2), -5px -5px 5px 3px rgba(255, 255, 255, 0.2) ;
+}
+.search{
+  margin: 20px auto;
+  max-width: 600px;
+  width: 90%;
+	padding: 20px;
+	border-radius: 30px;
+	 box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2), -5px -5px 5px 3px rgba(255, 255, 255, 0.2) ;
+	}
+  .radio-group{
+    display: flex;
+  
+  gap: 10px;
+  justify-content: center;
+  }
+
+    button{
+      color: black;
+      font-size: 12px;
+      font-weight: bold;
+      border: none;
+      padding:5px 10px 5px 10px;
+      margin: 10px 3px 10px 2px;
+      border-radius: 30px;
+      background: transparent;
+      box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2)  , -5px -5px 5px 3px rgba(255, 255, 255, 0.2) ;
+    }
+  button {
+  display: block;
+  margin: 15px auto;   
+  padding: 8px 20px;
+  cursor: pointer;
+  
+  ...
+}
+
+
+fieldset{border-radius: 30px ; border: 1px solid blue;}
+legend{color: black;}
+
+ select{border: none;
+    	padding:5px 10px 5px 10px;
+    	margin:5px;
+    	border-radius: 30px;
+    	background: transparent;
+    	box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2)  , -5px -5px 5px 3px rgba(255, 255, 255, 0.2) ;}
+
+    
+
+   input:focus, textarea:focus, select:focus {
+    outline: 1px solid blue; 
+}
+	  legend{font-size: 18px;font-weight: bold;}
+    input, textarea{
+      color: blue;
+      align-items: center;
+      margin: 5px;
+    	padding:5px 25px 5px 18px;
+    	background: transparent;
+    	border: none !important;
+	    border-radius: 30px;
+	    box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2) inset , -5px -5px 5px 3px rgba(255, 255, 255, 0.2) inset ;
+
+    }
+
+  .category::before {
+  content: attr(data-content); /* usa o atributo como texto */
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+}
+    
+
+    .category {
+    min-width: 60px;
+    padding: 5px 10px;
+     display:inline; 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2) , -5px -5px 5px 3px rgba(255, 255, 255, 0.2)
+}
+
+/* Estilo quando marcado */
+.category:checked {
+    background-color: transparent;
+    box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2)inset, -5px -5px 5px 3px rgba(255, 255, 255, 0.2)inset;
+}
+
+.category:checked::after {
+    
+}
+
+input, textarea {
+  width: 100%;          
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 10px 15px;
+  ...
+}
+
+
+
+#Windons_btn {z-index: 100;}
+#Windons_F {z-index: 300;}
+#Windons_text {z-index: 200;}
+
+#Windons_btn , #Windons_text, #Windons_F, #notice{
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.9s ease;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.8);
+      
+    }
+
+.conteudo-modal, .conteudo-modal_btn , .modal_F, .modal_notice{
+      background-color: lightblue;
+      padding: 20px;
+      margin:20px;
+      border-radius: 30px;
+      width: auto;
+      height: auto;
+      text-align: center;
+      position: absolute;
+      animation: aparecer 0.9s ease;
+      border: 1px solid blue;
+      
+    }
+
+    .close-x{
+      all: unset !important;
+      position: absolute !important;
+      top: 5px !important;
+      right: 13px !important ;
+      border: none;
+      font-size: 30px !important;
+      cursor: pointer !important;
+      color: blue !important;
+    }
+
+    .close-x:hover {
+      color: #e74c3c;
+    }
+
+    @keyframes aparecer {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+	
+</style
+      
+
+</head>
+<body style="background-color: lightblue;">
+
+  <button> <a href="http://localhost:9090/WebDeveloper/">Home</a> </button>
+  <button id="random"> Text Random</button>
+
+ 
+        <div id="Windons_btn" onclick="close_click_away(event,1) "> 
+          <div class="conteudo-modal_btn" id="T">
+
+                <button class="close-x" onclick="closeWindows(1)">×</button>
+                <h2>Textos Disponíveis !</h2>
+
+          </div>
+        </div>
+
+        <div id="Windons_text" onclick="close_click_away(event,2)">
+            <div class="conteudo-modal">
+
+                  <button class="close-x" onclick="closeWindows(2)">×</button>
+                  <h2 id="t"></h2>
+                  <p id="tx" style="text-align: justify;"></p>
+                  <h4 id="athr"></h4>
+                  <button type="button" id="fvrt">Favoritar ⭐️</button>
+                   <button style="display:flex;" type="button" id="ex">Excluir ❎</button>
+
+            </div>
+        </div>
+
+        <div id="Windons_F" onclick="close_click_away(event,3)">
+            <div class="modal_F" id="NTC">
+
+                <button class="close-x" onclick="closeWindows(3)">×</button>
+                <h2 id="fvrt_t"></h2>
+
+            </div>
+        </div>  
+ 
+
+
+  <div class="search" class="close_click_search">  
+     	  <fieldset class="fieldset">	
+     	    <legend>SEARCH</legend>
+  
+	     	    <div style="position: relative; width: 100%;">
+               <input type="search" id="search_t" placeholder="Search..." style="width: 100%; padding-right: 35px;">
+               <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">🔍</span>
+            </div>
+ 
+	     	    <div class="radio-group"> 
+    
+                  <input  type="radio" name="category" value="2" data-content="Favorites" class="category">
+                  <input type="radio" name="category" value="7" data-content="Latest" class="category">
+                  <input type="radio" name="category" value="6" data-content="Oldest" class="category">
+                  <input type="radio" name="category" value="9" data-content="All Text" class="category">
+              </div>
+
+          
+				</fieldset>
+			</div>	  
+    </div>
+
+
+    <div class="bottom" class="close_click_resister"> 
+     	    	<fieldset class="fieldset">
+     	    	    <legend>REGISTER</legend>
+              <form>
+     	    	    <input type="text" id="title" placeholder="Title...">
+     	    	    <input type="text" id="author" placeholder="Author..." >
+     	    	    <textarea rows="5" cols="61" id="text"placeholder="Write your text here..."></textarea><br>
+
+     	    	 
+     	    	    <button id="register" type="button">Send</button>
+                
+              </form>
+     	    	</fieldset>
+     	    </div>
+    </div>
+   
+</body>
